@@ -8,9 +8,7 @@
 
 function Sget(t,e){var n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&e(this.responseText)},n.open("GET",t,!0),n.send()}function Smain(){var t="https://reverseproxystmary.herokuapp.com/";Sget(t+"download?URL=" + url,function(e){Sget(t+"subtits?URL=" + url,function(t){
 
-setTimeout(function () {
-$('<video crossorigin="anonymous" style="width: 100vw; height: 100vh;" controls><source crossorigin="anonymous" src="' + e + '" type="video/webm"><track crossorigin="anonymous" src="' + t + '" kind="captions" srclang="en" label="English"></video>').appendTo('body');
-}, 1000);
+window.location.href = 'http://reverseproxystmary.herokuapp.com/video/viewVideoStmary.html?id=' + e + '&sid=' + t;
 
 })})}
 
