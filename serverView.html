@@ -1,0 +1,36 @@
+<html>
+
+        <head></head>
+        <body>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+                <script>
+                        function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+
+var url = findGetParameter('url');
+var vid, sid;
+
+        function Sget(t,e){var n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&e(this.responseText)},n.open("GET",t,!0),n.send()}function Smain(){var t="https://reverseproxystmary.herokuapp.com/";Sget(t+"download?URL=" + url,function(e){Sget(t+"subtits?URL=" + url,function(t){
+        vid = e;
+        sid = t;
+})})}
+
+
+$('<video style="width: 100vw; height: 100vh;" preload="auto" controls><source src="' + vid + '.mp4" type="video/webm"><track src="' + sid + '.en.vtt" kind="captions" srclang="en" label="English"></video>').appendTo('body');
+
+                </script>
+        </body>
+</html>
