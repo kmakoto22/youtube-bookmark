@@ -26,10 +26,11 @@ var vid, sid;
         function Sget(t,e){var n=new XMLHttpRequest;n.onreadystatechange=function(){4==this.readyState&&200==this.status&&e(this.responseText)},n.open("GET",t,!0),n.send()}function Smain(){var t="https://reverseproxystmary.herokuapp.com/";Sget(t+"download?URL=" + url,function(e){Sget(t+"subtits?URL=" + url,function(t){
         vid = e;
         sid = t;
+                $('<video style="width: 100vw; height: 100vh;" preload="auto" controls><source src="' + vid + '.mp4" type="video/webm"><track src="' + sid + '.en.vtt" kind="captions" srclang="en" label="English"></video>').appendTo('body');
+
 })})}
 
 
-$('<video style="width: 100vw; height: 100vh;" preload="auto" controls><source src="' + vid + '.mp4" type="video/webm"><track src="' + sid + '.en.vtt" kind="captions" srclang="en" label="English"></video>').appendTo('body');
 
                 </script>
         </body>
