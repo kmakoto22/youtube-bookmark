@@ -1,1 +1,2 @@
-document.body.innerHTML = '<iframe src="' + 'http://reverseproxystmary.herokuapp.com/video/viewVideoStmaryUrl.html?url='+window.location.href.replace("invidio.us", "youtube.com").replace("watch?v=", "watchv")+'" style="width: 100vw; height: 100vh;"></iframe>';
+document.head.innerHTML = ' <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script> <script type="module" src="https://unpkg.com/x-frame-bypass"></script>';
+document.body.innerHTML = '<iframe is="x-frame-bypass" src="' + 'http://reverseproxystmary.herokuapp.com/video/viewVideoStmaryUrl.html?url='+window.location.href.replace("invidio.us", "youtube.com").replace("watch?v=", "watchv")+'" style="width: 100vw; height: 100vh;"></iframe>';
